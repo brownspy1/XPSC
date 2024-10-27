@@ -5,17 +5,49 @@ int main()
 {
     int n;
     cin >> n;
-    int Sereja = 0, Dima = 0;
-    vector<int> v(n);
+    vector<int> v;
     for (int i = 0; i < n; i++)
     {
         int x;
         cin >> x;
         v.push_back(x);
     }
-    
-    int i = 0, j = n - 1;
-    while (i <= j)
+    // ka koto pabe seta
+    int Sereja = 0, Dima = 0;
+    // left and right er index
+    int left = 0, right = n - 1;
+    // akon kar chal seta
+    bool tarn = true;
+
+    while (left <= right)
     {
-        /* code */
+        if (v[left] > v[right])
+        {
+            if (tarn)
+            {
+                Sereja += v[left];
+            }
+            else
+            {
+                Dima += v[left];
+            }
+            left++;
+        }
+        else
+        {
+            if (tarn)
+            {
+                Sereja += v[right];
+            }
+            else
+            {
+                Dima += v[right];
+            }
+            right--;
+        }
+        tarn = !tarn;
     }
+
+    cout << Sereja << " " << Dima;
+    return 0;
+}
