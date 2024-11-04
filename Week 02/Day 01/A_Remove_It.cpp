@@ -8,6 +8,17 @@ using namespace std;
 #define all(x) x.begin(), x.end()
 int main(){
     fast
+    int n,x;cin>>n>>x;
+    for (int i = 0; i < n; i++)
+    {
+        int m;cin>>m;
+        if (m!=x)
+        {
+           cout<<m<<" ";
+        }
+        
+    }
     
+
     return 0;
 }

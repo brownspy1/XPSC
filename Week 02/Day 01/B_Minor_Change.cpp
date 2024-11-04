@@ -8,6 +8,18 @@ using namespace std;
 #define all(x) x.begin(), x.end()
 int main(){
     fast
+    int ans=0;
+    string a;cin>>a;
+    string b;cin>>b;
+    for (int i = 0; i < a.size(); i++)
+    {
+        if (a[i] != b[i])
+        {
+            ans++;
+        }
+        
+    }
+    cout<<ans;
     
     return 0;
 }
