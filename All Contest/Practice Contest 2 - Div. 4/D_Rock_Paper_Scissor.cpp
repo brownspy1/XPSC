@@ -37,7 +37,7 @@ int main()
         }
         else if (a < b)
         {
-            cout << (b - a)+1 / 2 << endl;
+            cout << ((b - a) / 2)+1 << endl;
         }
         else
         {
