@@ -12,29 +12,43 @@ int main()
         string word;
         cin >> word;
         int acount = 0, bcount = 0;
-
-        for (auto &&i : word)
+        for (int i = 0; i < n - 1; i++)
         {
-            if (i == 'a')
+            if (word[i] == 'a' && word[i + 1] == 'b')
             {
                 acount++;
             }
-            else if (i == 'b')
+            if (word[i] == 'b' && word[i + 1] == 'a')
             {
                 bcount++;
             }
         }
-        if (acount == 1 && bcount == 1)
+
+        if (acount == bcount)
         {
-            cout << 1 << endl;
-        }
-        else if (acount == bcount)
-        {
-            cout << acount + bcount << endl;
+            cout << n << endl;
         }
         else
         {
-            cout << max(acount, bcount) << endl;
+            int cnt1 = n, cnt2 = n;
+            char first = word[0], last = word[n - 1];
+            for (int i = 0; i < n; i++)
+            {
+                if (word[i] != first)
+                {
+                    break;
+                }
+                cnt1--;
+            }
+            for (int i = n-1; i >=0; i--)
+            {
+                if (word[i] != last)
+                {
+                    break;
+                }
+                cnt2--;
+            }
+            cout << max(cnt1, cnt2) << '\n';
         }
     }
 
