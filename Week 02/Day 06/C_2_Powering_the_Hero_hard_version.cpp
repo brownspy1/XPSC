@@ -18,7 +18,7 @@ int main()
         ll n;
         cin >> n;
         priority_queue<ll> Bonus;
-        ll Hero = 0;
+        ll Hero = 0,army = 0;
         for (ll i = 0; i < n; i++)
         {
             ll x;
@@ -34,10 +34,11 @@ int main()
                     auto it = Bonus.top();
                     Bonus.pop();
                     Hero += it;
+                    army = Hero;
                 }
             }
         }
-        cout << Hero << endl;
+        cout << army << endl;
     }
 
     return 0;
