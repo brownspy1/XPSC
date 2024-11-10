@@ -1,5 +1,4 @@
-// Created by @brownspy1 on 2024-11-02 Time:21:37:15
-//unsolved
+// Created by @brownspy1 on 2024-11-10 Time:21:24:39
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -33,25 +32,8 @@ int main() {
     }
     return 0;
 }
-bool contains1100(const string &s) {
-    return s.find("1100") != string::npos;
-}
+
 
 void solve() {
-    string s;
-        cin >> s;
-
-        int q;
-        cin >> q;
-
-        while (q--) {
-            int i, v;
-            cin >> i >> v;
-            s[i - 1] = '0' + v;
-            if (contains1100(s)) {
-                cout << "YES\n";
-            } else {
-                cout << "NO\n";
-            }
-        }
+    
 }

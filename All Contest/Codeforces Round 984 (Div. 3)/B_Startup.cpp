@@ -36,26 +36,23 @@ int main() {
 
 
 void solve() {
-    int n, k;
+        int n, k;
         cin >> n >> k;
-        map<int, vector<int>> brands;
-
+        vector<int> store(k,0);
         for (int i = 0; i < k; i++) {
             int bi, ci;
             cin >> bi >> ci;
-            brands[bi].push_back(ci);
+            bi--;
+            store[bi] += ci;
         }
 
         priority_queue<int> maxPrices;
-        for (auto [brand,price] : brands) {
-            sort(price.rbegin(), price.rend());
-            for (int taka : price) {
-                maxPrices.push(taka); 
-            }
-        }
 
+        for (auto i : store) {
+            maxPrices.push(i);
+        }
         long long totalEarned = 0;
-        for (int i = 0; i < n && !maxPrices.empty(); i++) {
+        for (int i = 0; i < min(n,k); i++) {
             totalEarned += maxPrices.top();
             maxPrices.pop();
         }
