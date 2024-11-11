@@ -8,6 +8,27 @@ using namespace std;
 #define all(x) x.begin(), x.end()
 int main(){
     fast
+    int t;cin>>t;
+    while (t--)
+    {
+        int n;cin>>n;
+        ll sum = 0;
+        for (int i = 0; i < n; i++)
+        {
+            int x;cin>>x;
+            sum+=x;
+        }
+        if (sum%n == 0 || n%sum == 0)
+        {
+            yes
+        }else
+        {
+            no
+        }
+        
+        
+        
+    }
     
     return 0;
 }
