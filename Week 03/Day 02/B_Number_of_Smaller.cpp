@@ -19,7 +19,6 @@ int main(){
     {
         cin>>vb[i];
     }
-    vector<int> v;
     int l = 0, w = 0;
     int ans = 0;
     while (w < b)
@@ -30,15 +29,11 @@ int main(){
             l++;
         }else
         {
-            v.push_back(ans);
+            cout<<ans<<" ";
             w++;
         }
 
     }
-    for (auto &&i : v)
-    {
-        cout<<i<<" ";
-    }cout<<'\n';
     
     
     return 0;
