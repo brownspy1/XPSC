@@ -12,13 +12,24 @@ int main(){
     while (t--)
     {
         int n;cin>>n;
-        ll sum = 0;
+        vector<int> v(n);
+        map<ll,ll> occ;
+        int cnt = 0;
         for (int i = 0; i < n; i++)
         {
-            int x;cin>>x;
-            sum+=x;
+            cin>>v[i];
         }
-        if (sum%n == 0 || n%sum == 0)
+        for (auto &&i : v)
+        {
+            if (i != 0 && occ.find(i) == occ.end())
+            {
+                occ[i]++;
+                cnt++;
+            }
+            
+        }
+        
+        if (cnt <= 1)
         {
             yes
         }else
