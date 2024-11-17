@@ -20,6 +20,7 @@ int main(){
         ll ans = 0, cnt = 0;
         ll r = 0;
         bool flag = false;
+        
         while (r < n)
         {
             if (v[r] < 0)
