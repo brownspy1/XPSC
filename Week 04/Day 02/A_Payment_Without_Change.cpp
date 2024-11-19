@@ -14,7 +14,6 @@ int main(){
         int a,b,n,s;cin>>a>>b>>n>>s;
         int cop = min(a,s/n), ans = s-(cop*n);
         cout<<(ans <= b?"YES":"NO")<<endl;
-
     }
     return 0;
 }
