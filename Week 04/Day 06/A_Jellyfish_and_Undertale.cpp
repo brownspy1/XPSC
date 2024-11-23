@@ -23,13 +23,12 @@ int main()
         {
             cin >> bomb[i];
         }
-        ll sum = 0;
-        for (int i = 0; i < b; i++)
+        ll sum = t;
+        for (auto &&i : bomb)
         {
-            sum+= min(t+bomb[i],n);
-
+            sum+=min(i,n-1);
         }
-        
+
         cout<<sum<<endl;
     }
 
