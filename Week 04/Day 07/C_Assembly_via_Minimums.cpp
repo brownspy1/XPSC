@@ -15,13 +15,21 @@ int main(){
     {
         int n;cin>>n;
         int m = n*(n-1)/2;
-        vector<int> v(m);
+        vector<int> v(m),ans;
         for (int i = 0; i < m; i++)
         {
             cin>>v[i];
         }
-        
-        for (auto &&i : v)
+        sort(all(v)); // -2 -2 -2 -2 0 0 0 0 0 3
+        int l = n-1;
+        for (int i = 0; i < m; i+= l--)
+        {
+            ans.push_back(v[i]);    
+        }
+
+        ans.push_back(ans.back());
+
+        for (auto &&i : ans)
         {
             cout<<i<<" ";
         }
