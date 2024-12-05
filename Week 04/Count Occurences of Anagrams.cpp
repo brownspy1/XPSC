@@ -32,3 +32,4 @@ int search(string pat, string txt) {
 	    }
 	    return cnt;
 	}
+
