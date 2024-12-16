@@ -9,9 +9,9 @@ int main(){
         if (n%2)
         {
             cout<<"NO"<<endl;
-            return 0;
-        }
-        int s = n/2;
+        }else
+        {
+            int s = n/2;
         cout<<"YES"<<endl;
         for (int i = 1; i <= s; i++)
         {
@@ -26,6 +26,9 @@ int main(){
             }
 
         }cout<<endl;
+        }
+        
+        
         
         
     }
