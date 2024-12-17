@@ -10,6 +10,14 @@ using namespace std;
 #define all(x) x.begin(), x.end()
 int main(){
     fast
+    int t;cin>>t;
+    while (t--)
+    {
+        int a,b;
+        cin>>a>>b;
+        int ans = (a^b);
+        cout<<ans<<endl;
+    }
     
     return 0;
 }
