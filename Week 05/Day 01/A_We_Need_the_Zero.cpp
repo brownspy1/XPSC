@@ -1,4 +1,4 @@
-// Created by @brownspy1 on 2024-12-16 Time:22-39-09
+// Created by @brownspy1 on 2024-12-17 Time:19-14-59
 #include <bits/stdc++.h>
 using namespace std;
 #define fast ios::sync_with_stdio(false);cin.tie(nullptr);cout.tie(nullptr);
@@ -22,17 +22,24 @@ int main(){
             XOR^=v[i];
         }
 
-        int ans = XOR;
+        for (int i = 0; i <n; i++)
+        {
+            v[i]^=XOR;
+        }
+
+        int ans = 0;
         for (int i = 0; i < n; i++)
         {
-            int cur = (XOR^v[i]);
-            ans = min(ans,cur);
+            ans ^= v[i];
         }
-        cout<<ans<<endl;;
+        if(ans == 0){
+            cout<<XOR<<endl;
+        }else
+        {
+            cout<<"-1"<<endl;
+        }
 
-        
     }
-
     
     return 0;
 }
