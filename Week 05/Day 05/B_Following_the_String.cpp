@@ -10,6 +10,29 @@ using namespace std;
 #define all(x) x.begin(), x.end()
 int main(){
     fast
+    int t;cin>>t;
+    while (t--)
+    {
+        int n;cin>>n;
+        vector<int> v(n);
+        for(int i = 0; i < n; i++) cin>>v[i];
+        map<char,int> mp;
+        for (char i = 'a'; i <= 'z'; i++)
+        {
+            mp[i] = 0;
+        }
+         for (int i = 0; i < n; i++) {
+            for (char ch = 'a'; ch <= 'z'; ch++) {
+                if (v[i] == mp[ch]) {
+                    cout << ch;
+                    mp[ch]++;
+                    break; 
+                }
+            }
+        }cout<<endl;
+        
+        
+    }
     
     return 0;
 }
