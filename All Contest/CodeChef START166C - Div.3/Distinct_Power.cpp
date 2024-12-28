@@ -1,4 +1,4 @@
-// Created by @brownspy1 on 2024-12-25 Time:20-56-19
+// Created by @brownspy1 on 2024-12-25 Time:22-29-52
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -36,21 +36,18 @@ int main() {
 }
 
 void solve(){
-  int n;cin>>n;
-  vector<int> v(n);
-  for(int i = 0; i < n; i++) cin>>v[i];
-  map<int,int>penalty;
-  for (int i = 0; i <n; i++)
-  {
-    int delay = i+1;
-    penalty[v[i]] = max(penalty[v[i]],delay);
-  }
-  int ans = 0;
-  for (auto  x : penalty)
-  {
-        ans+=x.second;
-  }
-  cout<<ans<<endl;
-  
+  int n;
+        cin >> n;
+        vector<int> a(n);
+        for (int &x : a) cin >> x;
 
+        vector<pair<int, int>> v;
+        for (int i = 0; i < n; ++i) v.push_back({a[i], i + 1});
+        sort(v.rbegin(), v.rend());
+
+        int cnt = 0;
+        for (int i = 0; i < n - 1; ++i) {
+            if (abs(v[i].second - v[i + 1].second) == 1) cnt++;
+        }
+        cout << n - cnt << endl;
 }
