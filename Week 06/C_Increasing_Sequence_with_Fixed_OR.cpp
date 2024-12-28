@@ -17,15 +17,15 @@ int main()
     cin >> t;
     while (t--)
     {
-        int n;
+        ll n;
         cin >> n;
-        deque<int> x;
+        deque<ll> x;
         for (int i = 0; i <= __lg(n); i++)
         {
             if ((n >> i) & 1)
             {
                 ll value = n - (1LL << i);
-                if (value != 0)
+                if (value > 0)
                 {
                     x.push_front(value);
                 }
