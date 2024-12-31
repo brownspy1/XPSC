@@ -21,7 +21,7 @@ int main(){
             cin>>a[i];
         }
 
-        vector<int> bit(D+1);
+        vector<int> bits(D+1);
 
         for (int i = 0; i < n; i++)
         {
@@ -29,7 +29,7 @@ int main(){
             {
                 if ((a[i] >> j ) & 1)
                 {
-                    bit[j]++;
+                    bits[j]++;
                 }
             }
             
@@ -37,22 +37,23 @@ int main(){
         ll ans = 0;
         for (int i = D; i >=0; i--)
         {
-            if (bit[i] == n)
+            if (bits[i] == n)
             {
                 ans+= (1LL << i);
             }else
             {
-                int need = n-bit[i];
-                if (need < k)
+                int need = n-bits[i];
+                if (need <= k)
                 {
-                    
+                    ans+= (1LL<<i);
+                    k-=need;
                 }
                 
             }
             
             
         }
-        
+        cout<<ans<<endl;
         
         
     }
