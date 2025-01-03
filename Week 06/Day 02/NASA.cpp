@@ -8,36 +8,49 @@ using namespace std;
 #define cno cout<<"No"<<endl;
 #define ll long long
 #define all(x) x.begin(), x.end()
-vector<int> allPalindrom;
+const int mxInt = 1<<15;
+vector<int> allPalindrome;
 bool itsPalindrome(int a){
     string s = to_string(a),b = to_string(a);
     reverse(all(b));
     return s == b;
 }
 
+void palindrome(){
+    for (int i = 0; i < mxInt; i++)
+    {
+        if (itsPalindrome(i))
+        {
+            allPalindrome.push_back(i);
+        }
+        
+    }
+    
+}
 int main(){
     fast
     int t;cin>>t;
+    palindrome();
     while(t--){
         int n;cin>>n;
-        vector<int> v(n);
+        vector<int> v(n),cnt(mxInt+1);
         for (int i = 0; i < n; i++)
         {
             cin>>v[i];
+            cnt[v[i]]++;
         }
         int ans = 0;
-        for (int i = 0; i < n-1; i++)
+        for (int i = 0; i < n; i++)
         {
-            int Xor = v[i]^v[i+1];
-
-            if (itsPalindrome(Xor))
+            for (int j = 0; j < allPalindrome.size(); j++)
             {
-                cout<< (v[i] ^ v[i+1])<<endl;
-                ans++;
+                int curr = v[i]^allPalindrome[j];
+                ans+=cnt[curr];
             }
             
+            
         }
-        // cout<<ans<<endl;
+        cout<<ans<<endl;
         
         
     }
