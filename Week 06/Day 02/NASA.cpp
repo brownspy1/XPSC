@@ -8,10 +8,10 @@ using namespace std;
 #define cno cout<<"No"<<endl;
 #define ll long long
 #define all(x) x.begin(), x.end()
-const int mxInt = 1<<15;
+const int mxInt = (1<<15);
 vector<int> allPalindrome;
 bool itsPalindrome(int a){
-    string s = to_string(a),b = to_string(a);
+    string s = to_string(a),b = s;
     reverse(all(b));
     return s == b;
 }
@@ -29,8 +29,8 @@ void palindrome(){
 }
 int main(){
     fast
-    int t;cin>>t;
     palindrome();
+    int t;cin>>t;
     while(t--){
         int n;cin>>n;
         vector<int> v(n),cnt(mxInt+1);
@@ -39,18 +39,16 @@ int main(){
             cin>>v[i];
             cnt[v[i]]++;
         }
-        int ans = 0;
+        ll ans = n;
         for (int i = 0; i < n; i++)
         {
-            for (int j = 0; j < allPalindrome.size(); j++)
+            for (int  num: allPalindrome)
             {
-                int curr = v[i]^allPalindrome[j];
+                int curr = (v[i]^num);
                 ans+=cnt[curr];
             }
-            
-            
         }
-        cout<<ans<<endl;
+        cout<<ans/2<<endl;
         
         
     }
