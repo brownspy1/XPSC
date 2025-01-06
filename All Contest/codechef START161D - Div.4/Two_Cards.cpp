@@ -43,36 +43,41 @@ void solve()
     int n;
         cin >> n;
         
-        int alice[n], bob[n];
-        for (int i = 0; i < n; i++) cin >> alice[i];
-        for (int i = 0; i < n; i++) cin >> bob[i];
+        vector<int> a(n);
+        vector<int> b(n);
+        for (int i = 0; i < n; i++) cin >> a[i];
+        for (int i = 0; i < n; i++) cin >> b[i];
 
-        int max_val = 0, max_index = -1;
-        for (int i = 0; i < n; i++) {
-            int current_max = (alice[i] > bob[i]) ? alice[i] : bob[i];
-            if (current_max > max_val) {
-                max_val = current_max;
-                max_index = i;
+       map<int,int> mp;
+       for (int i = 0; i < n; i++)
+       {
+            mp[a[i]] = max(a[i],b[i]);
+       }
+       sort(all(a),greater<int>());
+       int bob = mp[a[0]];bool flag = false;
+       for (int i = 0; i < n; i++)
+       {
+            if (mp[a[i]] > bob)
+            {
+                flag = true;
+                break;
             }
-        }
-
-        int largest = 0, largest_index = -1;
-        int second_largest = 0, second_largest_index = -1;
-        for (int i = n - 1; i >= 0; i--) {
-            if (alice[i] > largest) {
-                second_largest = largest;
-                second_largest_index = largest_index;
-                largest = alice[i];
-                largest_index = i;
-            } else if (alice[i] > second_largest) {
-                second_largest = alice[i];
-                second_largest_index = i;
+            
+       }
+       if(!flag){
+            if (bob > mp[a[1]])
+            {
+                yes;
+            }else
+            {
+                no;
             }
-        }
 
-        largest = (alice[largest_index] > bob[largest_index]) ? alice[largest_index] : bob[largest_index];
-        second_largest = (alice[second_largest_index] > bob[second_largest_index]) ? alice[second_largest_index] : bob[second_largest_index];
-
-        if (largest == second_largest && max_val == largest) cno
-        else cyes
+       }else
+       {
+        yes;
+       }
+       
+       
+       
 }
