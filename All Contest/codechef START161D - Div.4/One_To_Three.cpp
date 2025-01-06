@@ -11,5 +11,46 @@ using namespace std;
 int main(){
     fast
     int t;cin>>t;
+    while (t--)
+    {
+        int n;cin>>n;
+        vector<int> v(n);
+        for(int i = 0;i<n;i++) cin>>v[i];
+
+        for (int i = 1; i < n-1; i++)
+        {
+            if (v[i-1]+v[i+1] == 4)
+            {
+                if (v[i] > 2)
+                {
+                    v[i] = 4-v[i];
+                }
+                
+            }
+            
+        }
+        
+        for (int i = n-2; i > 0; i--)
+        {
+            if (v[i-1]+v[i+1] == 4)
+            {
+                if (v[i] > 2)
+                {
+                    v[i] = 4-v[i];
+                }
+                
+            }
+            
+        }
+        int sum = 0;
+        for (int i = 0; i <n; i++)
+        {
+            sum+=v[i];
+        }
+        cout<<sum<<endl;
+        
+        
+    }
+    
     return 0;
 }
