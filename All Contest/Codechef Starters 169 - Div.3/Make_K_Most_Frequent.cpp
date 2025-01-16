@@ -31,36 +31,42 @@ int main(){
         if (ans == m[k]) {
             cout << 0 << endl;
         } else {
-            m.clear();
-            long long ct = 0, pt = 0;
+    m.clear();
+    long long ct = 0, pt = 0;
 
-            for (long long i = 0; i < n; i++) {
-                m[v[i]]++;
-                ct = max(ct, m[v[i]]);
-                if (ct == m[k]) {
-                    pt = 1;
-                    break;
-                }
-            }
-            if (!pt) {
-                m.clear();
-                ct = 0;
-                for (long long i = n - 1; i >= 0; i--) {
-                    m[v[i]]++;
-                    ct = max(ct, m[v[i]]);
-                    if (ct == m[k]) {
-                        pt = 1;
-                        break;
-                    }
-                }
-            }
+    // prefix check
+    for (long long i = 0; i < n; i++) {
+        m[v[i]]++;
+        ct = max(ct, m[v[i]]);
+        if (ct == m[k]) {
+            pt = 1;
+            break;
+        }
+    }
 
-            if (pt) {
-                cout << 1 << endl;
-            } else {
-                cout << 2 << endl;
+    // suffix check
+    if (!pt) {
+        m.clear();
+        ct = 0;
+        for (long long i = n - 1; i >= 0; i--) {
+            m[v[i]]++;
+            ct = max(ct, m[v[i]]);
+            if (ct == m[k]) {
+                pt = 1;
+                break;
             }
         }
     }
+
+    // prefix and suffix check
+    if (!pt) {
+        pt = 2; 
+    }
+
+    cout << pt << endl;
+}
+
+    }
     return 0;
 }
+

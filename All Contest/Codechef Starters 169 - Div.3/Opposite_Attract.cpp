@@ -15,20 +15,15 @@ int main(){
     {
         int n;cin>> n;
         string s;cin>>s;
-        vector<int> v;
         for (int i = 0; i < n; i++)
         {
             if (s[i] == '0')
             {
-                v.push_back(1);
+                cout<<1;
             }else if(s[i] == '1'){
-                v.push_back(0);
+                cout<<0;
             }
 
-        }
-        for (auto &&i : v)
-        {
-            cout<<i;
         }cout<<endl;
         
         
