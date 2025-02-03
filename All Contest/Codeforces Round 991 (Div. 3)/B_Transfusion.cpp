@@ -1,64 +1,55 @@
-// Created by @brownspy1 on 2024-12-05 Time:22:12:17
+// Created by @brownspy1 on 2025-02-03 Time:23-23-10
 #include <bits/stdc++.h>
 using namespace std;
-
-#define pub(X) push_back(X)
-#define pob pop_back
-#define all(x) x.begin(), x.end()
-#define sz(x) (int)(x).size()
-#define yes cout << "YES\n"
-#define no cout << "NO\n"
+#define fast ios::sync_with_stdio(false);cin.tie(nullptr);cout.tie(nullptr);
+#define yes cout<<"YES"<<endl;
+#define no cout<<"NO"<<endl;
 #define cyes cout<<"Yes"<<endl;
 #define cno cout<<"No"<<endl;
+#define ll long long
+#define all(x) x.begin(), x.end()
+int main(){
+    fast
+     int t; cin>>t;
+     while (t--)
+     {
+        int n;cin>>n;
+        int sum_o = 0, sum_e = 0;
+        for (int i = 1; i <= n; i++)
+        {
+            int x;cin>>x;
+            if(i & 1){
+                sum_e+=x;
+            }else
+            {
+                sum_o+=x;
+            }
+            
+        }
 
-const int MOD = 1e9+7;
-const int INF = INT_MAX;
-const int NINF = INT_MIN;
+        int odd = (n/2), even = n-(n/2);
 
-typedef long long ll;
-typedef pair<int, int> pii;
-typedef vector<int> vi;
-typedef vector<ll> vll;
+        if (sum_e%even != 0 || sum_o%odd != 0)
+        {
+            no;
+            continue;
+        }
+        
 
-void solve();
+        if((sum_e/even) == (sum_o/odd)){
+            yes;
+        }else
+        {
+            no;
+        }
+        
 
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-    cout.tie(nullptr);
+        
+        
+        
+        
 
-    int t;
-    cin >> t; 
-    while (t--) {
-        solve();
-    }
+     }
+     
     return 0;
-}
-
-
-
-void solve() {
-    int n;
-    cin >> n;
-    vector<ll> a(n);
-    ll total = 0, sum_odd = 0, sum_even = 0;
-    int count_odd = (n + 1) / 2, count_even = n / 2;
-    int i = 0;
-    while (i < n) {
-        cin >> a[i];
-        total += a[i];
-        if ((i + 1) % 2) sum_odd += a[i];
-        else sum_even += a[i];
-        i++;
-    }
-    if (total % n != 0) {
-        cout << "NO\n";
-        return;
-    }
-    ll target = total / n;
-    if (sum_odd == target * (ll)count_odd && sum_even == target * (ll)count_even) {
-        cout << "YES\n";
-    } else {
-        cout << "NO\n";
-    }
 }
