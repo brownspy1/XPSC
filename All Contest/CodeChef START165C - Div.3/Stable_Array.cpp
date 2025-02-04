@@ -8,7 +8,6 @@ using namespace std;
 #define cno cout<<"No"<<endl;
 #define ll long long
 #define all(x) x.begin(), x.end()
-
 int main(){
     fast
     int t; cin>>t;
@@ -18,7 +17,7 @@ int main(){
         vector<int> v(n);
         for(int i = 0; i < n; i++) cin>>v[i];
         int cnt = 0, mx = 0;
-        for (int i = n-1; i >= 0; i++)
+        for (int i = n-1; i > 0; i--)
         {
             if (v[i] > v[i-1])
             {
