@@ -13,8 +13,8 @@ int main(){
      int t; cin>>t;
      while (t--)
      {
-        int n;cin>>n;
-        int sum_o = 0, sum_e = 0;
+        ll n;cin>>n;
+        ll sum_o = 0, sum_e = 0;
         for (int i = 1; i <= n; i++)
         {
             int x;cin>>x;
