@@ -1,4 +1,4 @@
-// Created by @brownspy1 on 2025-02-14 Time:01-09-49
+//? Created by @brownspy1 on 2025-02-14 Time:01-09-49
 #include <bits/stdc++.h>
 using namespace std;
 #define fast ios::sync_with_stdio(false);cin.tie(nullptr);cout.tie(nullptr);
@@ -21,6 +21,7 @@ int power(int x,int n){
         n>>=1;
     }
     return ans;
+
     
 }
 int main(){
@@ -29,6 +30,7 @@ int main(){
     while (t--)
     {
         int x,n;cin>>x>>n;
+
         cout<<power(x,n)<<endl;
     }
     
